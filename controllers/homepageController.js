@@ -1,7 +1,7 @@
 const { db_connection } = require("../utils/database");
 
 exports.getAllProducts = async (req, res) => {
-  let products_obj = {}; // ProductName,Price,Description,EntryDate,Age,Category,Size
+  let products_obj = {};
 
   db_connection.then(async (db_conn) => {
     let err_all_products
@@ -59,7 +59,7 @@ exports.getAllProducts = async (req, res) => {
   });
 };
 
-fetchImageInsp = async (db_instance, entries) => {
+exports.fetchImageInsp = async (db_instance, entries) => {
   for (let ele of entries) {
     img_obj = await db_instance.query(
       `select ImgLink from Image where ImgId = '${ele["ImgId"]}'`
