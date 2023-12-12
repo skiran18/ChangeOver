@@ -1,7 +1,7 @@
 const { db_connection } = require("../utils/database");
 const { fetchImageInsp } = require("./homepageController");
 
-exports.getMenProducts = async (req, res) => {
+exports.getCategoryProducts = async (req, res) => {
     let cat_products_obj = {};
     db_connection.then(async (db_conn) => {
     let err_all_products;
