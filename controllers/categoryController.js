@@ -20,6 +20,7 @@ exports.getMenProducts = async (req, res) => {
                 err_all_products = true;
                 console.log(err);
                 res.set("Content-Type", "application/json");
+                res.setHeader('Access-Control-Allow-Origin', '*');
                 res.status(500).send(
                     JSON.stringify({
                         errorStatus: 500,
