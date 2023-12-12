@@ -41,11 +41,13 @@ const getAllProducts = async (req, res) => {
           sale_product_entries
         );
         res.set("Content-Type", "application/json");
+        res.setHeader('Access-Control-Allow-Origin', '*');
         res.status(200).send(JSON.stringify(products_obj));
       })
       .catch((err) => {
         console.log(err);
         res.set("Content-Type", "application/json");
+        res.setHeader('Access-Control-Allow-Origin', '*');
         res
           .status(500)
           .send(
