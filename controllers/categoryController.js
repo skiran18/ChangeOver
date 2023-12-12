@@ -14,6 +14,7 @@ exports.getMenProducts = async (req, res) => {
                     product_entries
                 );
                 res.set("Content-Type", "application/json");
+                res.setHeader('Access-Control-Allow-Origin', '*');
                 res.status(200).send(JSON.stringify(cat_products_obj));
             })
             .catch((err) => {
