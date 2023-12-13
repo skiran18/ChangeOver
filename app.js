@@ -4,6 +4,7 @@ const app = express();
 const homepageRouter = require("./routes/homePage");
 const categoryRouter = require("./routes/categoryRoutes");
 const sellRouter = require("./routes/sellRoutes");
+const filterRouter = require("./routes/filterRoutes")
 
 var corsOptions = function(req, res, next){ 
     res.header('Access-Control-Allow-Origin', '*'); 
@@ -21,4 +22,5 @@ app.use('/imgs',express.static(path.join(__dirname, 'public/images')));
 app.use("/home", homepageRouter);
 app.use("/category", categoryRouter);
 app.use("/sell",sellRouter);
+app.use("/filter",filterRouter)
 module.exports = app;
